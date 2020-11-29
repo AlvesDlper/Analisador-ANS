@@ -32,14 +32,15 @@ public class PCRCovidCheck {
 		
 		
 		int score=0;
-		String aux = "";
+		
 		String result= new String();
 		
 		if (sintoms.isEmpty()) {
 			
-			 result ="O paciente não preenche os critérios "
-					+ "da diretriz de utilização da ANS.\n"
-					+ "Negar exame ou solicitar novo relatório médico.";
+			 result =" O paciente não preenche os critérios "
+						+ "da diretriz de utilização da ANS. \n"
+						+ "Não foram apresentados sintomas compativeis com um caso suspeito de COVID-19. \n"
+						+ "Negar exame ou solicitar novo relatório médico.";;
 			 
 		}
 		else if (age<12) {
@@ -48,20 +49,20 @@ public class PCRCovidCheck {
 				
 				if (criteriosMSPed.contains(sint.toLowerCase())) {
 					score+=1;
-					aux+= sint+"-";
+					
 				}
 			}
 			if (score >=2) {
-				result ="O Exame deve ser autorizado.\nO paciente de "+age+" anos, preenche "
+				result =" O exame deve ser autorizado.\nO paciente de "+age+" anos, preenche "
 						+ "os critérios da Diretriz de Utilização da ANS.\nConforme "
-						+ "Relatório médico, ele apresenta sintomas ("+aux+") que o classificam como"
-						+ "caso suspeito";
+						+ "Relatório médico, ele apresenta sintomas que o classificam como "
+						+ "caso suspeito de COVID-19";
 			
 			}
 			else
-				result="O paciente não preenche os critérios "
-						+ "da diretriz de utilização da ANS.\n"
-						+ "Não foram apresentados sintomas compativeis com um caso suspeito de Covid.\n"
+				result=" O paciente não preenche os critérios "
+						+ "da diretriz de utilização da ANS. \n"
+						+ "Não foram apresentados sintomas compativeis com um caso suspeito de COVID-19. \n"
 						+ "Negar exame ou solicitar novo relatório médico.";
 				
 		}
@@ -71,18 +72,19 @@ public class PCRCovidCheck {
 				
 				if (criteriosMSIdoso.contains(sint.toLowerCase())) {
 					score+=1;
-					aux+= sint+"-";
+					
 				}
 			}
 			if (score >=2) {
-				result="O Exame deve ser autorizado.\nO paciente de "+age+" anos, preenche "
+				result=" O exame deve ser autorizado.\nO paciente de "+age+" anos, preenche "
 						+ "os critérios da Diretriz de Utilização da ANS.\nConforme "
-						+ "Relatório médico, ele apresenta sintomas ("+aux+") que o classificam como"
-						+ "caso suspeito";
+						+ "Relatório médico, ele apresenta sintomas que o classificam como "
+						+ "caso suspeito de COVID-19";
 			}
 			else
-				result="O paciente não preenche os critérios "
-						+ "da diretriz de utilização da ANS.\n"
+				result=" O paciente não preenche os critérios "
+						+ "da diretriz de utilização da ANS. \n"
+						+ "Não foram apresentados sintomas compativeis com um caso suspeito de COVID-19. \n"
 						+ "Negar exame ou solicitar novo relatório médico.";
 			
 		} else {
@@ -91,19 +93,20 @@ public class PCRCovidCheck {
 			
 			if (criteriosMSAdulto.contains(sint.toLowerCase())) {
 				score+=1;
-				aux+= sint+"-";
+				
 			
 			}
 		}
 		if (score >=2) {
-			result="O Exame deve ser autorizado.\nO paciente de "+age+" anos, preenche "
+			result=" O exame deve ser autorizado.\nO paciente de "+age+" anos, preenche "
 					+ "os critérios da Diretriz de Utilização da ANS.\nConforme "
-					+ "Relatório médico, ele apresenta sintomas ("+aux+") que o classificam como"
-					+ "caso suspeito";
+					+ "Relatório médico, ele apresenta sintomas que o classificam como "
+					+ "caso suspeito de COVID-19";
 		}
 		else
-			{result="O paciente não preenche os critérios "
-					+ "da diretriz de utilização da ANS.\n"
+			{result=" O paciente não preenche os critérios "
+					+ "da diretriz de utilização da ANS. \n"
+					+ "Não foram apresentados sintomas compativeis com um caso suspeito de COVID-19. \n"
 					+ "Negar exame ou solicitar novo relatório médico.";}
 		
 		}

@@ -1,6 +1,7 @@
 package com.ansanalyzer.resources;
 
 
+
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -11,6 +12,7 @@ import com.amazonaws.services.comprehendmedical.AWSComprehendMedicalClient;
 import com.amazonaws.services.comprehendmedical.model.DetectEntitiesV2Request;
 import com.amazonaws.services.comprehendmedical.model.DetectEntitiesV2Result;
 import com.amazonaws.services.comprehendmedical.model.Entity;
+import com.amazonaws.services.comprehendmedical.model.Trait;
 
 
 /*
@@ -34,9 +36,23 @@ public class MedicalTextAnalyzer {
 		
 		for (Entity entities : resultado) {
 			
-			if (entities.getCategory().equals("MEDICAL_CONDITION")) {
+			if ((entities.getCategory().equals("MEDICAL_CONDITION")) && (!entities.getTraits().isEmpty())){
+					boolean aux=false;
+				for(Trait tr : entities.getTraits()) {
+					
+					if (tr.getName().equals("SYMPTOM")) {
+						aux=true;
+					}
+					if (tr.getName().equals("NEGATION")) {
+						aux=false;
+					}
+					
+					
+				}
 				
-						res.add(entities.getText());}
+					if (aux==true) 
+						res.add(entities.getText());
+				}
 										
 			}
 		return res;
