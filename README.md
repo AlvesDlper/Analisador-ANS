@@ -14,6 +14,7 @@ baseadas em Inteligência Artificial podem ser introduzidas na rotina das operad
 de saúde, bem como analisar os custos da sua utilização e seus possíveis benefícios. Propõese, assim, um estudo sobre como as técnicas de Processamento de Linguagem natural e Machine Learning, oferecidas por serviços de computação em nuvem, podem ser empregadas na
 análise de cobertura, examinando os pedidos médicos, buscando e extraindo informações relevantes que ajudem a definir sobre a autorização de determinado procedimento em concordância com as normas da ANS, além de implementar e testar um protótipo de software capaz
 de automatizar essa análise.
+
 <b>PALAVRAS-CHAVE:</b>
 Machine Learning; inteligência artificial; Processamento de linguagem natural; Saúde suplementar; ANS; Cobertura;
 
